@@ -56,5 +56,6 @@ Talkvite5::Application.routes.draw do
   #     resources :products
   #   end
 
-  root to: "users#new"
+  root to: 'users#new'
+
 end
