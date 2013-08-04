@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130804225630) do
+ActiveRecord::Schema.define(version: 20130804230541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 20130804225630) do
     t.string   "meta_type"
     t.text     "meta_data"
     t.text     "meta_controls"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "metalinks", force: true do |t|
+    t.integer  "metafile_from_id"
+    t.integer  "metafile_to_id"
+    t.string   "metalink_type"
+    t.string   "metalink_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -26,3 +26,10 @@ tag3 = Tag.create!( tagable_type: 'Post', tagable_id: post1.id, tag_code: 'test'
 tag4 = Tag.create!( tagable_type: 'Location', tagable_id: location1.id, tag_code: 'test' )
 
 message1 = Message.create!( user_from_id: user1.id, user_to_id: user2.id, message_type: '', content: 'testing' )
+
+metafile1 = Metafile.create!( name:'first', description: 'test', meta_type: 'raw', meta_data: 'meta data', meta_controls: 'meta file controls' )
+metafile2 = Metafile.create!( name:'second', description: 'test', meta_type: 'raw', meta_data: 'meta data', meta_controls: 'meta file controls' )
+
+subject1 = Subject.create!( talk_id: talk1.id, metafile_id: metafile1.id, subject_type: 'whatever' )
+
+metalink1 = Metalink.create!( metafile_from_id: metafile1.id, metafile_to_id: metafile2.id, metalink_type: 'included', metalink_data: 'boring')

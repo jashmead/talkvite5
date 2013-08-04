@@ -1,0 +1,33 @@
+<%= form_for(@metalink) do |f| %>
+  <% if @metalink.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@metalink.errors.count, "error") %> prohibited this metalink from being saved:</h2>
+
+      <ul>
+      <% @metalink.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :metafile_from_id %><br>
+    <%= f.number_field :metafile_from_id %>
+  </div>
+  <div class="field">
+    <%= f.label :metafile_to_id %><br>
+    <%= f.number_field :metafile_to_id %>
+  </div>
+  <div class="field">
+    <%= f.label :metalink_type %><br>
+    <%= f.text_field :metalink_type %>
+  </div>
+  <div class="field">
+    <%= f.label :metalink_data %><br>
+    <%= f.text_field :metalink_data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

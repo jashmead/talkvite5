@@ -1,0 +1,33 @@
+<h1>Listing metalinks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metafile from</th>
+      <th>Metafile to</th>
+      <th>Metalink type</th>
+      <th>Metalink data</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @metalinks.each do |metalink| %>
+      <tr>
+        <td><%= metalink.metafile_from_id %></td>
+        <td><%= metalink.metafile_to_id %></td>
+        <td><%= metalink.metalink_type %></td>
+        <td><%= metalink.metalink_data %></td>
+        <td><%= link_to 'Show', metalink %></td>
+        <td><%= link_to 'Edit', edit_metalink_path(metalink) %></td>
+        <td><%= link_to 'Destroy', metalink, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Metalink', new_metalink_path %>
