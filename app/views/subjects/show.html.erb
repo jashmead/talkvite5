@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Metafile:</strong>
+  <%= @subject.metafile_id %>
+</p>
+
+<p>
+  <strong>Talk:</strong>
+  <%= @subject.talk_id %>
+</p>
+
+<p>
+  <strong>Subject type:</strong>
+  <%= @subject.subject_type %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @subject.content %>
+</p>
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>
