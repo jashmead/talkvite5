@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :talks, through: :posts
   has_one :location   # current location of the user
+  has_many :tags, as: :tagable
 end

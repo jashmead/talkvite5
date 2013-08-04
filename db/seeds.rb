@@ -18,3 +18,9 @@ user2 = User.create!( name: 'talkvite', email: 'talkvite@talkvite.com', location
 talk1 = Talk.create!( subject: 'talkvite', description: 'talk about the talkvite site', user_id: user1.id, location_id: location3.id );
 
 post1 = Post.create!( user_id: user2.id, talk_id: talk1.id, post_type: 'join' );
+
+## is the Model name the best choice fore the tagable_type field's contents? could use plural form, table name, or singular
+tag1 = Tag.create!( tagable_type: 'User', tagable_id: user1.id, tag_code: 'test' )
+tag2 = Tag.create!( tagable_type: 'Talk', tagable_id: talk1.id, tag_code: 'test' )
+tag3 = Tag.create!( tagable_type: 'Post', tagable_id: post1.id, tag_code: 'test' )
+tag4 = Tag.create!( tagable_type: 'Location', tagable_id: location1.id, tag_code: 'test' )

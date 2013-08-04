@@ -10,4 +10,5 @@ class Talk < ActiveRecord::Base
   has_many :posts
   has_many :users, through: :posts
   has_one :location
+  has_many :tags, as: :tagable
 end
