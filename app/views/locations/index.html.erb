@@ -1,0 +1,45 @@
+<h1>Listing locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location type</th>
+      <th>Street1</th>
+      <th>Street2</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Post code</th>
+      <th>Address full</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.name %></td>
+        <td><%= location.location_type %></td>
+        <td><%= location.street1 %></td>
+        <td><%= location.street2 %></td>
+        <td><%= location.city %></td>
+        <td><%= location.country %></td>
+        <td><%= location.post_code %></td>
+        <td><%= location.address_full %></td>
+        <td><%= location.longitude %></td>
+        <td><%= location.latitude %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Location', new_location_path %>
