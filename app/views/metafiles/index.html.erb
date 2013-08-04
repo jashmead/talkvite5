@@ -1,0 +1,35 @@
+<h1>Listing metafiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Meta type</th>
+      <th>Meta data</th>
+      <th>Meta controls</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @metafiles.each do |metafile| %>
+      <tr>
+        <td><%= metafile.name %></td>
+        <td><%= metafile.description %></td>
+        <td><%= metafile.meta_type %></td>
+        <td><%= metafile.meta_data %></td>
+        <td><%= metafile.meta_controls %></td>
+        <td><%= link_to 'Show', metafile %></td>
+        <td><%= link_to 'Edit', edit_metafile_path(metafile) %></td>
+        <td><%= link_to 'Destroy', metafile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Metafile', new_metafile_path %>

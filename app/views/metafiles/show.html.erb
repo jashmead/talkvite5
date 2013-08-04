@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @metafile.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @metafile.description %>
+</p>
+
+<p>
+  <strong>Meta type:</strong>
+  <%= @metafile.meta_type %>
+</p>
+
+<p>
+  <strong>Meta data:</strong>
+  <%= @metafile.meta_data %>
+</p>
+
+<p>
+  <strong>Meta controls:</strong>
+  <%= @metafile.meta_controls %>
+</p>
+
+<%= link_to 'Edit', edit_metafile_path(@metafile) %> |
+<%= link_to 'Back', metafiles_path %>
