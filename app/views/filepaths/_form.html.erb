@@ -1,0 +1,29 @@
+<%= form_for(@filepath) do |f| %>
+  <% if @filepath.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@filepath.errors.count, "error") %> prohibited this filepath from being saved:</h2>
+
+      <ul>
+      <% @filepath.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :metafile_id %><br>
+    <%= f.number_field :metafile_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pathname %><br>
+    <%= f.text_field :pathname %>
+  </div>
+  <div class="field">
+    <%= f.label :file_type %><br>
+    <%= f.text_field :file_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

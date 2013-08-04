@@ -1,0 +1,31 @@
+<h1>Listing filepaths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Metafile</th>
+      <th>Pathname</th>
+      <th>File type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @filepaths.each do |filepath| %>
+      <tr>
+        <td><%= filepath.metafile_id %></td>
+        <td><%= filepath.pathname %></td>
+        <td><%= filepath.file_type %></td>
+        <td><%= link_to 'Show', filepath %></td>
+        <td><%= link_to 'Edit', edit_filepath_path(filepath) %></td>
+        <td><%= link_to 'Destroy', filepath, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Filepath', new_filepath_path %>

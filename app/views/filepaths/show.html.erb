@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Metafile:</strong>
+  <%= @filepath.metafile_id %>
+</p>
+
+<p>
+  <strong>Pathname:</strong>
+  <%= @filepath.pathname %>
+</p>
+
+<p>
+  <strong>File type:</strong>
+  <%= @filepath.file_type %>
+</p>
+
+<%= link_to 'Edit', edit_filepath_path(@filepath) %> |
+<%= link_to 'Back', filepaths_path %>
